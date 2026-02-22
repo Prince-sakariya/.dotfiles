@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+addToPathFront $DENO_INSTALL
+addToPath /usr/local/go/bin
+addToPath $GOPATH/bin
+addToPath $HOME/work/wrapper
+addToPath /usr/local/netflix/tvui-automation-analyzer
+addToPath $HOME/.yarn/bin
+addToPath /usr/lib/llvm-8/bin
+addToPath $HOME/.cargo/bin
+addToPath $HOME/.rustup
+
+# ccache
+addToPathFront /usr/lib/ccache
