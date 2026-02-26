@@ -1,0 +1,27 @@
+#!/bin/zsh
+
+# Get a list of connected monitors
+MONITORS=($(xrandr --listactivemonitors | awk 'NR>1 {print$4}'))
+# Define workspaces
+WORKSPACES=("1" "2" "3")
+
+# If only one monitor is connected, we don't want to attempt to assign workspaces to non-existent monitors
+if [ ${#MONITORS[@]} -eq 1 ]; then
+    echo "Only one monitor detected. Using the single monitor for all workspaces."
+    # Move all workspaces to the single monitor
+    for WORKSPACE in "${WORKSPACES[@]}"; do
+        echo "Moving workspace $WORKSPACE to monitor ${MONITORS[0]}"
+        i3-msg workspace $WORKSPACE; move container to output ${MONITORS[0]}
+    done
+else
+    # Assign workspaces to monitors (make sure you have enough monitors)
+    for i in ${WORKSPACES[@]}; do
+        WORKSPACE="${WORKSPACES[$i]}"
+        MONITOR="${MONITORS[$i]}"
+
+        if [ -n "$MONITOR" ]; then
+            echo "Moving workspace $WORKSPACE to monitor $MONITOR"
+            i3-msg workspace $WORKSPACE; move container to output $MONITOR
+        fi
+    done
+fi

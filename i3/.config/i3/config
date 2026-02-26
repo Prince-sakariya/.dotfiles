@@ -212,8 +212,8 @@ bar {
 # ------------------------------------------
 exec --no-startup-id nm-applet
 
-bindsym $mod+Shift+s exec --no-startup-id ~/dotfiles/bin/monitor
-bindsym $mod+Shift+n exec --no-startup-id ~/dotfiles/bin/resolution
+bindsym $mod+shift+s exec --no-startup-id ~/.dotfiles/bin/monitor
+# bindsym $mod+Shift+n exec --no-startup-id ~/dotfiles/bin/resolution
 
 # FKeys
 # Pulse Audio controls
@@ -234,3 +234,11 @@ bindsym $mod+m move workspace to output left
 # Suspend
 bindsym $mod+Shift+period exec systemctl suspend
 
+# Screenshot
+bindsym Mod4+Shift+s exec gnome-screenshot -i
+
+# Apps
+assign [class="Brave-browser"] 2
+assign [class="rviz2"] 3
+assign [class="gazebo"] 3
+assign [class="Inkscape"] 5
