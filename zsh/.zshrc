@@ -103,7 +103,7 @@ source ~/.zsh_profile
 
 alias luamake=/home/dev/personal/lua-language-server/3rd/luamake/luamake
 
-
+# NODE
 export NVM_DIR="$HOME/.config/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
