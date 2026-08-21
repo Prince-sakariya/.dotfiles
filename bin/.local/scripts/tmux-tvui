@@ -1,12 +1,58 @@
 #!/usr/bin/env bash
-tmux-windowizer client 
-tmux-windowizer server 
 
+# =============================================================================
+# tvui development environment launcher
+# =============================================================================
+#
+# Creates/resets two tmux windows using tmux-windowizer:
+#
+#   client  - runs the tvui client
+#   server  - runs the tvui server
+#
+# The supplied argument is expected to be a branch/worktree path. Its
+# basename is used as the directory name inside both tmux environments.
+#
+# Usage:
+#
+#   ./script-name <branch-path>
+#
+# Example:
+#
+#   ./script-name ~/work/tvui/my-feature
+#
+# This results in:
+#
+#   client -> cd my-feature && ./tvui client
+#   server -> cd my-feature && ./tvui server
+# =============================================================================
+
+
+# Reset/prepare the client tmux environment.
+#
+# The control characters here are intentionally preserved from the original
+# script.
+tmux-windowizer client
+
+# Reset/prepare the server tmux environment.
+#
+# The control characters here are intentionally preserved from the original
+# script.
+tmux-windowizer server
+
+
+# Extract the branch/worktree directory name from the supplied path.
 branch_name=$(basename $1)
+
+
+# Switch the client environment into the branch directory.
 tmux-windowizer client cd $branch_name
+
+# Start the tvui client.
 tmux-windowizer client ./tvui client
 
+
+# Switch the server environment into the branch directory.
 tmux-windowizer server cd $branch_name
+
+# Start the tvui server.
 tmux-windowizer server ./tvui server
-
-

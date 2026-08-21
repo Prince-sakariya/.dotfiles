@@ -1,14 +1,68 @@
 #!/usr/bin/env bash
 
+# =============================================================================
+# tmux-windowizer
+# =============================================================================
+#
+# Send a command to a dedicated tmux window.
+#
+# The window is named after the basename of the first argument. If that
+# window does not already exist in the current tmux session, it is created.
+#
+# Usage:
+#
+#   tmux-windowizer <name/path> <command...>
+#
+# Examples:
+#
+#   tmux-windowizer client ./tvui client
+#   tmux-windowizer server ./tvui server
+#
+# A path such as:
+#
+#   ~/work/tvui/my-feature
+#
+# produces a window named:
+#
+#   my-feature
+#
+# The first argument is used only to determine the target window name.
+# Everything after it is treated as the command to send to that window.
+# =============================================================================
+
+
+# Extract the final component of the supplied path to use as the window name.
 branch_name=$(basename $1)
+
+# Get the name of the currently active tmux session.
 session_name=$(tmux display-message -p "#S")
+
+# Replace '.' and '/' characters with '_' so the name is safe to use as a
+# tmux window target.
 clean_name=$(echo $branch_name | tr "./" "__")
+
+# Build the full tmux target:
+#
+#   session_name:window_name
+#
 target="$session_name:$clean_name"
 
+
+# Create the target window if it does not already exist.
+#
+# -d creates the window without switching to it.
+# -n assigns it the cleaned branch name.
 if ! tmux has-session -t $target 2> /dev/null; then
     tmux neww -dn $clean_name
 fi
 
+
+# Remove the first argument because it was only used to identify the window.
 shift
+
+# Send the remaining arguments as a command to the target window.
+#
+# The literal newline at the end tells tmux to press Enter after the command,
+# causing the command to actually execute.
 tmux send-keys -t $target "$*
 "

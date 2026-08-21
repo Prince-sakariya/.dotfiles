@@ -1,25 +1,40 @@
 #!/usr/bin/env bash
 
+# If a directory was passed as an argument, use it directly.
+# Example: ./tmux-sessionizer ~/Documents/my-project
 if [[ $# -eq 1 ]]; then
     selected=$1
 else
-    selected=$(find ~/Documents -mindepth 1 -maxdepth 1 -type d | fzf)
+    # Otherwise, find directories directly inside ~/Documents
+    # and let you choose one using fzf.
+    selected=$(find ~/Documents -mindepth 1 -maxdepth 2 -type d | fzf)
 fi
 
+# If you cancelled fzf (or somehow selected nothing), quit.
 if [[ -z $selected ]]; then
     exit 0
 fi
 
+# Get the directory name and turn dots into underscores.
+# Example: ~/Documents/my.project → my_project
+# This becomes the tmux session name.
 selected_name=$(basename "$selected" | tr . _)
+
+# Check whether the tmux server is currently running.
 tmux_running=$(pgrep tmux)
 
+# If we're NOT already inside tmux AND no tmux server is running:
+# create a new tmux session and attach to it.
 if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
     tmux new-session -s $selected_name -c $selected
     exit 0
 fi
 
+# If a session for this directory doesn't already exist,
+# create it in the background (-d) and start it in the selected directory (-c).
 if ! tmux has-session -t=$selected_name 2> /dev/null; then
     tmux new-session -ds $selected_name -c $selected
 fi
 
+# Switch to the selected tmux session.
 tmux switch-client -t $selected_name

@@ -1,52 +1,129 @@
 #!/usr/bin/env zsh
 
-# Super cool keyboard stuffs.
-# Required for x applications
-setxkbmap -option caps:ctrl_modifier
+# =============================================================================
+# Shell utility functions and environment configuration
+# =============================================================================
+#
+# This file contains:
+#   - Environment variables used by the dotfiles setup.
+#   - Small helper functions for managing services and system settings.
+#   - PATH manipulation helpers.
+#   - A helper for committing and pushing the dotfiles repositories.
+#
+# Source this file from your zsh configuration if you want these functions
+# and environment variables available in your interactive shell.
+# =============================================================================
 
+
+# Super cool keyboard stuffs.
+# Required for X applications.
+#
+# List of stow packages/directories used by the dotfiles setup.
 export STOW_FOLDERS="bin,tmux,uwuntu,personal,i3,zsh"
 
+
+# =============================================================================
+# System services
+# =============================================================================
+
+# Start MongoDB and configure it to start automatically at boot.
 startMongo() {
     sudo systemctl start mongod
     sudo systemctl enable mongod
 }
 
+
+# Increase the maximum number of inotify watches available to the current
+# system. Useful for development tools that need to monitor large directory
+# trees for file changes.
 increaseWatchers() {
     sudo sysctl fs.inotify.max_user_watches=65536
     sudo sysctl -p
 }
 
+
+# =============================================================================
+# Desktop customization
+# =============================================================================
+
+# Select a background image interactively with fzf and set it as the MATE
+# desktop background.
+#
+# Images are expected to live under:
+#
+#   ~/dotfiles/backgrounds/
+#
+# NOTE: The function name is "ange_background" as defined originally.
 ange_background() {
     dconf write /org/mate/desktop/background/picture-filename "'$HOME/dotfiles/backgrounds/$(ls ~/dotfiles/backgrounds | fzf)'"
 }
 
 
+# =============================================================================
+# Error handling
+# =============================================================================
+
+# Print the supplied message to stderr and terminate the current shell/script
+# with an error status.
 die () {
     echo >&2 "$@"
     exit 1
 }
 
+
+# =============================================================================
+# PATH helpers
+# =============================================================================
+
+# Append a directory to PATH if it is not already present.
 addToPath() {
     if [[ "$PATH" != *"$1"* ]]; then
         export PATH=$PATH:$1
     fi
 }
 
+
+# Prepend a directory to PATH if it is not already present.
+#
+# This is useful when you want executables in a directory to take precedence
+# over executables with the same name elsewhere in PATH.
 addToPathFront() {
     if [[ "$PATH" != *"$1"* ]]; then
         export PATH=$1:$PATH
     fi
 }
 
+
+# =============================================================================
+# Dotfiles
+# =============================================================================
+
+# Commit and push changes to both the personal dotfiles repository and the
+# main dotfiles repository.
+#
+# The function:
+#   1. Enters $DOTFILES.
+#   2. Enters the personal repository.
+#   3. Adds, commits, and pushes its changes.
+#   4. Returns to the main dotfiles repository.
+#   5. Adds, commits, and pushes its changes.
+#
+# Both repositories use the same intentionally ridiculous commit message.
 commitDotFiles() {
     pushd $DOTFILES
+
+    # Commit and push the personal dotfiles repository.
     pushd personal
     git add .
     git commit -m "automagic messaging from me in the past.  Have you checked up your butthole?"
     git push origin master
     popd
+
+    # Commit and push the main dotfiles repository.
     git add .
     git commit -m "automagic messaging from me in the past.  Have you checked up your butthole?"
     git push origin master
+
+    # Return to the directory where the function was originally invoked.
     popd
 }

@@ -1,28 +1,39 @@
 #!/usr/bin/env bash
 
+# Configure and build an NRDP branch, or just build an already-configured branch.
 nrdp_commands() {
 
+    # Derive the branch name from the supplied path.
     branch_name=$(basename $1)
+
+    # Set the source and build directories for this branch.
     nrdp="$NRDP/$branch_name"
     build="$NRDP_BUILDS/$branch_name"
 
+    # Create and enter the branch-specific build directory.
     mkdir -p $build
     cd $build
 
-    # configure the damn script
+    # Run configuration unless this invocation is explicitly build-only.
     if [ "$2" != "just-build" ]; then
         pushd $nrdp
+
+        # Make sure the branch's submodules are up to date.
         git submodule update
         popd
 
+        # Configure the project using the options provided by projector.
         $nrdp/configure $(projector --pwd $nrdp configure)
+
+        # Refresh compile_commands.json in the source tree.
         rm $nrdp/compile_commands.json
         cp compile_commands.json $nrdp
     fi
 
-    # build netflix
+    # Build Netflix.
     $(projector build)
 
+    # Notify the user when the build has completed.
     if [ "$2" != "just-build" ]; then
         notify-send --icon=gtk-info "NRDP Build $branch_name" "has completed"
     else
@@ -32,19 +43,24 @@ nrdp_commands() {
 
 case "$1" in
     "tmux")
-
+        # Get the current tmux session name.
         session_name=$(tmux display-message -p '#S');
+
+        # Turn the branch path into a safe tmux window name.
         clean_arg=$(basename $2 | tr '/.' '__')
         target="$session_name:$clean_arg"
 
+        # Create the window if it does not already exist.
         if ! tmux has-session -t $target; then
             tmux neww -dn $clean_arg
         fi
+
+        # Run tmux-nrdp in the target window.
         tmux send-keys -t $target "tmux-nrdp $2 $3
 "
         ;;
     *)
+        # Run the normal configure/build flow.
         nrdp_commands $1 $2
         ;;
 esac
-
