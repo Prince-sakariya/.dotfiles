@@ -104,11 +104,6 @@ source ~/.zsh_profile
 
 alias luamake=/home/dev/personal/lua-language-server/3rd/luamake/luamake
 
-# VIM
-alias vim='nvim'
-alias work='cd ~/Projects/xota_wasm && vim .'
-alias activate='source ~/xota/.venv/bin/activate'
-
 # NODE
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -116,3 +111,7 @@ export NVM_DIR="$HOME/.nvm"
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export PATH=$PATH:(pwd)/binaryen-version_121/bin
+export PATH=$PATH:(pwd)/wabt-1.0.36/bin
+export PATH=$PATH:(pwd)/wasm-split-24.12.1/bin
+export PATH="/opt/nvim/bin:$PATH"

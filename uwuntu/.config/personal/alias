@@ -2,7 +2,6 @@
 alias esc="$HOME/.config/sway/config"
 alias vim="$VIM"
 alias vims="NVIM_LISTEN_ADDRESS=/tmp/nvim $VIM"
-alias work="cd ~/Documents/0_git"
 
 alias python="python3"
 alias cbp="cat $DOTFILES/zsh/.config/.zsh_profile"
@@ -12,4 +11,8 @@ alias bp="dotFileInstall && source ~/.zshrc"
 alias eirc="nvim $XDG_CONFIG_HOME/i3/i3config"
 alias dotFileInstall="$DOTFILES/install"
 
-
+alias vim='nvim'
+alias work='cd ~/Projects/xota_wasm'
+alias activate='source ~/xota/.venv/bin/activate'
+alias cxb='cargo xota build'
+# alias wasm-split-debug='wasm-split'
