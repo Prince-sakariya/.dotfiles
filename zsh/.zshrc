@@ -126,5 +126,4 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 
-# opencode
-export PATH=/home/dev/.opencode/bin:$PATH
+

@@ -4,3 +4,9 @@ addToPath $HOME/.rustup
 
 # ccache
 addToPathFront /usr/lib/ccache
+
+# opencode
+addToPath $HOME/.opencode/bin
+
+# MATLAB
+addToPath $HOME/MATLAB/R2026a/bin
