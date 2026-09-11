@@ -1,0 +1,217 @@
+﻿Diagnose log at 2026-09-11T09:44:40Z
+
+AppPath: /usr/local/bin/git-credential-manager
+InstallDir: /usr/local/share/gcm-core/
+Version: 2.9.1+6760f0ef069c994aa2bb1d703fb374986ee82a3e
+
+------------
+Diagnostic: Environment
+Skipped: False
+Success: True
+Exception: None
+Log:
+OSType: Linux
+OSVersion: Ubuntu 22.04.5 LTS
+Reading environment variables... OK
+ Variables:
+FTP_PROXY=http://wsl-proxy:3129
+NVM_CD_FLAGS=-q
+LSCOLORS=Gxfxcxdxbxegedabagacad
+TERM_PROGRAM_VERSION=3.2a
+all_proxy=http://wsl-proxy:3129
+STOW_FOLDERS=bin,tmux,uwuntu,personal,i3,zsh
+WAYLAND_DISPLAY=wayland-0
+http_proxy=http://wsl-proxy:3129
+SHLVL=4
+PROMPT_COMMAND=prompt_command;_check_etc_environment_change
+DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
+PULSE_SERVER=unix:/mnt/wslg/PulseServer
+GIT_TRACE2_PARENT_SID=c1ec6dcb-d859-44e3-9256-248058032593
+NAME=ABT-C-0084V
+PWD=/home/sap3abt/.dotfiles
+ftp_proxy=http://wsl-proxy:3129
+NVM_BIN=/home/sap3abt/.nvm/versions/node/v22.19.0/bin
+DISPLAY=:0
+SHELL=/usr/bin/zsh
+LESSCLOSE=/usr/bin/lesspipe %s %s
+WSL_DISTRO_NAME=dev
+_ETC_ENVIRONMENT_LAST_MOD_TIME=1789112031
+NVM_INC=/home/sap3abt/.nvm/versions/node/v22.19.0/include/node
+OLDPWD=/home/sap3abt
+ALL_PROXY=http://wsl-proxy:3129
+WSLENV=
+TMUX=/tmp/tmux-1000/default,94861,0
+PAGER=less
+HOSTTYPE=x86_64
+NVM_DIR=/home/sap3abt/.nvm
+HTTP_PROXY=http://wsl-proxy:3129
+GPG_TTY=/dev/pts/2
+_=/usr/local/bin/git-credential-manager
+WSL_INTEROP=/run/WSL/705_interop
+USER=sap3abt
+LANG=C.UTF-8
+no_proxy=localhost,127.0.0.1,127.*,172.*,192.168.*,10.*,169.254.169.254,de.bosch.com,apac.bosch.com,emea.bosch.com,us.bosch.com,rb-artifactory.bosch.com,bosch.tech,sourcecode01.de.bosch.com,sourcecode.socialcoding.bosch.com,bcr-de01.inside.bosch.cloud,.bosch-iot-cloud.com,sourcecode06.dev.bosch.com
+ZSH=/home/sap3abt/.oh-my-zsh
+TMUX_PANE=%0
+LESS=-R
+https_proxy=http://wsl-proxy:3129
+XDG_CONFIG_HOME=/home/sap3abt/.config
+TERM_PROGRAM=tmux
+HOME=/home/sap3abt
+LESSOPEN=| /usr/bin/lesspipe %s
+NO_PROXY=localhost,127.0.0.1,127.*,172.*,192.168.*,10.*,169.254.169.254,de.bosch.com,apac.bosch.com,emea.bosch.com,us.bosch.com,rb-artifactory.bosch.com,bosch.tech,sourcecode01.de.bosch.com,sourcecode.socialcoding.bosch.com,bcr-de01.inside.bosch.cloud,.bosch-iot-cloud.com,sourcecode06.dev.bosch.com
+DOTFILES=/home/sap3abt/.dotfiles
+TERM=tmux-256color
+LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
+LOGNAME=sap3abt
+PATH=/opt/nvim/bin:/home/sap3abt/.nvm/versions/node/v22.19.0/bin:/home/sap3abt/.nvm/versions/node/v22.19.0/bin:/opt/nvim/bin:/home/sap3abt/.nvm/versions/node/v22.19.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/sap3abt/.nvm/versions/node/v22.19.0/bin:/home/sap3abt/.local/bin:/home/sap3abt/.local/scripts:/usr/lib/ccache:/home/sap3abt/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files (x86)/Common Files/Oracle/Java/java8path:/mnt/c/Program Files (x86)/Common Files/Oracle/Java/javapath:/mnt/c/Program Files/dotnet/:/mnt/c/Program Files/7-Zip:/mnt/c/Program Files/Microsoft VS Code/bin:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files (x86)/Common Files/ETAS/3rdParty4.0/:/mnt/c/Program Files (x86)/Common Files/ETAS/3rdParty6.0/:/mnt/c/Program Files/Common Files/ETAS/3rdParty6.0/:/mnt/c/Program Files/chocolatey/bin:/mnt/c/Program Files/Docker/Docker/resources/bin:/mnt/c/Users/SAP3ABT/AppData/Local/Microsoft/WindowsApps:/mnt/c/Program Files/Git/git-bash.exe:/mnt/c/Program Files/Git/git-cmd.exe:/mnt/c/Users/SAP3ABT/wsl_dev:/home/sap3abt/.rustup:/home/sap3abt/Projects/xota_wasm/xota-rs/tools/binaryen-version_121/bin:/home/sap3abt/Projects/xota_wasm/xota-rs/tools/wabt-1.0.36/bin:/home/sap3abt/Projects/xota_wasm/xota-rs/tools/wasm-split-24.12.1/bin:/home/sap3abt/Projects/xota_wasm/xota-rs/tools/wasm-split-24.12.1/bin/wasm-split-debug:/opt/nvim/bin:/home/sap3abt/Projects/xota_wasm/xota-rs/tools/binaryen-version_121/bin:/home/sap3abt/Projects/xota_wasm/xota-rs/tools/wabt-1.0.36/bin:/home/sap3abt/Projects/xota_wasm/xota-rs/tools/wasm-split-24.12.1/bin:/home/sap3abt/.local/bin:/home/sap3abt/.fzf/bin:/home/sap3abt/Projects/xota_wasm/xota-rs/tools/binaryen-version_121/bin:/home/sap3abt/Projects/xota_wasm/xota-rs/tools/wabt-1.0.36/bin:/home/sap3abt/Projects/xota_wasm/xota-rs/tools/wasm-split-24.12.1/bin:/home/sap3abt/Projects/xota_wasm/xota-rs/tools/binaryen-version_121/bin:/home/sap3abt/Projects/xota_wasm/xota-rs/tools/wabt-1.0.36/bin:/home/sap3abt/Projects/xota_wasm/xota-rs/tools/wasm-split-24.12.1/bin:/home/sap3abt/Projects/xota_wasm/xota-rs/main/tools/binaryen-version_121/bin:/home/sap3abt/Projects/xota_wasm/xota-rs/main/tools/wabt-1.0.36/bin:/home/sap3abt/Projects/xota_wasm/xota-rs/main/tools/wasm-split-24.12.1/bin:/usr/local/go/bin:/home/sap3abt/work/wrapper:/usr/local/netflix/tvui-automation-analyzer:/home/sap3abt/.yarn/bin:/usr/lib/llvm-8/bin:(pwd)/binaryen-version_121/bin:(pwd)/wabt-1.0.36/bin:(pwd)/wasm-split-24.12.1/bin
+XDG_RUNTIME_DIR=/run/user/1000/
+WSL2_GUI_APPS_ENABLED=1
+HTTPS_PROXY=http://wsl-proxy:3129
+
+
+------------
+Diagnostic: File system
+Skipped: False
+Success: True
+Exception: None
+Log:
+Temporary directory is '/tmp/'...
+Checking basic file I/O...
+Writing to temporary file '/tmp/0e014329aa7cbf5a76f0660d'... OK
+Reading from temporary file '/tmp/0e014329aa7cbf5a76f0660d'... OK
+Deleting temporary file '/tmp/0e014329aa7cbf5a76f0660d'... OK
+Testing IFileSystem instance...
+UserHomePath: /home/sap3abt
+UserDataDirectoryPath: /home/sap3abt/.gcm
+GetCurrentDirectory(): /home/sap3abt/.dotfiles
+
+------------
+Diagnostic: Networking
+Skipped: False
+Success: True
+Exception: None
+Log:
+Checking networking and HTTP stack...
+Creating HTTP client... OK
+IsNetworkAvailable: True
+Sending HEAD request to http://example.com... OK
+Sending HEAD request to https://example.com... OK
+Acquiring free TCP port... OK
+Testing local HTTP loopback connections...
+Creating new HTTP listener for http://localhost:40471/... OK
+Waiting for loopback connection... OK
+Writing response... OK
+Waiting for response data... OK
+Loopback connection data OK
+
+------------
+Diagnostic: Git
+Skipped: False
+Success: True
+Exception: None
+Log:
+Getting Git version... OK
+Git version is '2.34.1'
+Locating current repository...Git repository at '/home/sap3abt/.dotfiles/.git'
+ OK
+Listing all Git configuration... OK
+Git configuration:
+file:/etc/gitconfig	filter.lfs.clean=git-lfs clean -- %f
+file:/etc/gitconfig	filter.lfs.smudge=git-lfs smudge -- %f
+file:/etc/gitconfig	filter.lfs.process=git-lfs filter-process
+file:/etc/gitconfig	filter.lfs.required=true
+file:/home/sap3abt/.gitconfig	user.name=Sakariya Prince (2WP/PJ-DRX)
+file:/home/sap3abt/.gitconfig	user.email=Prince.Sakariya@de.bosch.com
+file:/home/sap3abt/.gitconfig	push.default=simple
+file:/home/sap3abt/.gitconfig	push.recursesubmodules=check
+file:/home/sap3abt/.gitconfig	core.trustctime=false
+file:/home/sap3abt/.gitconfig	core.editor=vim
+file:/home/sap3abt/.gitconfig	core.filemode=false
+file:/home/sap3abt/.gitconfig	core.autocrlf=false
+file:/home/sap3abt/.gitconfig	filter.lfs.clean=git-lfs clean -- %f
+file:/home/sap3abt/.gitconfig	filter.lfs.smudge=git-lfs smudge -- %f
+file:/home/sap3abt/.gitconfig	filter.lfs.required=true
+file:/home/sap3abt/.gitconfig	filter.lfs.process=git-lfs filter-process
+file:/home/sap3abt/.gitconfig	gc.autodetach=false
+file:/home/sap3abt/.gitconfig	pull.rebase=true
+file:/home/sap3abt/.gitconfig	http.http://*.bosch.com/.proxy=
+file:/home/sap3abt/.gitconfig	http.https://*.bosch.com/.proxy=
+file:/home/sap3abt/.gitconfig	http.http://*.*.bosch.com/.proxy=
+file:/home/sap3abt/.gitconfig	http.https://*.*.bosch.com/.proxy=
+file:/home/sap3abt/.gitconfig	http.http://*.*.*.bosch.com/.proxy=
+file:/home/sap3abt/.gitconfig	http.https://*.*.*.bosch.com/.proxy=
+file:/home/sap3abt/.gitconfig	credential.usehttppath=true
+file:/home/sap3abt/.gitconfig	credential.helper=
+file:/home/sap3abt/.gitconfig	credential.helper=/usr/local/bin/git-credential-manager
+file:/home/sap3abt/.gitconfig	url.ssh://git@sourcecode.socialcoding.bosch.com:7999/.insteadof=https://sourcecode.socialcoding.bosch.com/scm/
+file:/home/sap3abt/.gitconfig	credential.https://dev.azure.com.usehttppath=true
+file:/home/sap3abt/.gitconfig	credential.http://rb-proxy-de.bosch.com:8080.provider=generic
+file:.git/config	core.repositoryformatversion=0
+file:.git/config	core.filemode=true
+file:.git/config	core.bare=false
+file:.git/config	core.logallrefupdates=true
+file:.git/config	remote.origin.url=https://github.com/Prince-sakariya/.dotfiles.git
+file:.git/config	remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
+file:.git/config	branch.main.remote=origin
+file:.git/config	branch.main.merge=refs/heads/main
+file:.git/config	branch.work/wsl.remote=origin
+file:.git/config	branch.work/wsl.merge=refs/heads/work/wsl
+
+
+------------
+Diagnostic: Credential storage
+Skipped: False
+Success: False
+Exception:
+System.Exception: No credential store has been selected.
+
+Set the GCM_CREDENTIAL_STORE environment variable or the credential.credentialStore Git configuration setting to one of the following options:
+
+  secretservice : freedesktop.org Secret Service (requires graphical interface)
+  gpg           : GNU `pass` compatible credential storage (requires GPG and `pass`)
+  cache         : Git's in-memory credential cache
+  plaintext     : store credentials in plain-text files (UNSECURE)
+  none          : disable internal credential storage
+
+See https://aka.ms/gcm/credstores for more information.
+
+   at GitCredentialManager.CredentialStore.EnsureBackingStore()
+   at GitCredentialManager.CredentialStore.Remove(String service, String account)
+   at GitCredentialManager.Diagnostics.CredentialStoreDiagnostic.RunInternalAsync(StringBuilder log, IList`1 additionalFiles)
+   at GitCredentialManager.Diagnostics.Diagnostic.RunAsync()
+Log:
+ICredentialStore instance is of type: CredentialStore
+Writing test credential...Deleting test credential...
+------------
+Diagnostic: Microsoft authentication (AAD/MSA)
+Skipped: False
+Success: True
+Exception: None
+Log:
+Broker is not enabled.
+Gathering MSAL token cache data... OK
+CacheDirectory: /home/sap3abt/.local/.IdentityService
+CacheFileName: msal.cache
+CacheFilePath: /home/sap3abt/.local/.IdentityService/msal.cache
+KeyringCollection: 
+KeyringSchemaName: 
+KeyringSecretLabel: 
+KeyringAttribute1: (,)
+KeyringAttribute2: (,)
+Creating cache helper... OK
+Verifying MSAL token cache persistence... OK
+
+------------
+Diagnostic: GitHub API
+Skipped: False
+Success: False
+Exception:
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 403 (rate limit exceeded).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at GitHub.GitHubRestApi.GetMetaInfoAsync(Uri targetUri)
+   at GitHub.Diagnostics.GitHubApiDiagnostic.RunInternalAsync(StringBuilder log, IList`1 additionalFiles)
+   at GitCredentialManager.Diagnostics.Diagnostic.RunAsync()
+Log:
+Using 'https://github.com/' as API target.
+Querying '/meta' endpoint...

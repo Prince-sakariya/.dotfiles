@@ -99,12 +99,13 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
 source ~/.zsh_profile
 
 alias luamake=/home/dev/personal/lua-language-server/3rd/luamake/luamake
 
 # NODE
-export NVM_DIR="$HOME/.config/nvm"
+export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
@@ -123,7 +124,10 @@ else
     fi
 fi
 unset __conda_setup
-# <<< conda initialize <<<
 
+export PATH=$PATH:(pwd)/binaryen-version_121/bin
+export PATH=$PATH:(pwd)/wabt-1.0.36/bin
+export PATH=$PATH:(pwd)/wasm-split-24.12.1/bin
+export PATH="/opt/nvim/bin:$PATH"
 
-
+export GPG_TTY=$(tty)

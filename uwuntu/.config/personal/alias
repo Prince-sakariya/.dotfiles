@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 alias esc="$HOME/.config/sway/config"
-alias vim="nvim"
+alias vim="$VIM"
 alias vims="NVIM_LISTEN_ADDRESS=/tmp/nvim $VIM"
-alias work="cd ~/Documents/0_git"
+alias homework="cd ~/Documents/0_git"
 
 alias python="python3"
 alias cbp="cat $DOTFILES/zsh/.config/.zsh_profile"
@@ -14,3 +14,8 @@ alias dotFileInstall="$DOTFILES/install"
 
 # watch GPU usage refreshing every second
 alias wgpu="watch -n 1 nvidia-smi"
+alias vim='nvim'
+alias work='cd ~/Projects/xota_wasm'
+alias activate='source ~/xota/.venv/bin/activate'
+alias cxb='cargo xota build'
+# alias wasm-split-debug='wasm-split'

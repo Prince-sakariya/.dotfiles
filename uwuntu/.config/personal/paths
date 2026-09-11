@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 addToPath $HOME/.cargo/bin
 addToPath $HOME/.rustup
+addToPathFront $HOME/Projects/xota_wasm/xota-rs/tools/wasm-split-24.12.1/bin/wasm-split-debug
 
 # ccache
 addToPathFront /usr/lib/ccache
