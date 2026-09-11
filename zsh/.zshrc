@@ -115,3 +115,6 @@ export PATH=$PATH:(pwd)/binaryen-version_121/bin
 export PATH=$PATH:(pwd)/wabt-1.0.36/bin
 export PATH=$PATH:(pwd)/wasm-split-24.12.1/bin
 export PATH="/opt/nvim/bin:$PATH"
+
+export GPG_TTY=$(tty)
+
